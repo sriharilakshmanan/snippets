@@ -19,13 +19,12 @@ export default async function Home() {
 
     return (
         <div>
-            <div className="flex items-center justify-between">
-                <h2 className="text-xl font-bold">Snippets</h2>
+            <div className="my-2 flex flex-col gap-2">{renderedSnippets}</div>
+            <div className="flex justify-end items-center my-2">
                 <Link className="border p-2 rounded" href={`/snippets/new`}>
                     New
                 </Link>
             </div>
-            <div className="my-2 flex flex-col gap-2">{renderedSnippets}</div>
         </div>
     );
 }
