@@ -7,27 +7,36 @@ export async function createSnippet(
     formState: { message: string },
     formData: FormData
 ) {
-    const title = formData.get('title');
-    const code = formData.get('code');
+    try {
+        const title = formData.get('title');
+        const code = formData.get('code');
 
-    if (typeof title !== 'string' || title.length < 3) {
+        if (typeof title !== 'string' || title.length < 3) {
+            return {
+                message: 'Title must be atleast 3 characters',
+            };
+        }
+        if (typeof code !== 'string' || code.length < 10) {
+            return {
+                message: 'Code must be atleast 10 characters',
+            };
+        }
+        await db.snippet.create({
+            data: {
+                title,
+                code,
+            },
+        });
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+            return {
+                message: error.message,
+            };
+        }
         return {
-            message: 'Title must be atleast 3 characters',
+            message: 'Something went wrong. Please try again.',
         };
     }
-    if (typeof code !== 'string' || code.length < 10) {
-        return {
-            message: 'Code must be atleast 10 characters',
-        };
-    }
-
-    const snippet = await db.snippet.create({
-        data: {
-            title,
-            code,
-        },
-    });
-    console.log(snippet);
     redirect('/');
 }
 
