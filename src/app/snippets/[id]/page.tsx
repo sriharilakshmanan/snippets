@@ -1,4 +1,4 @@
-import { db } from '@/app/db';
+import { db } from '@/db';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
