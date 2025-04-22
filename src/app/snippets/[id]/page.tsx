@@ -24,8 +24,8 @@ async function ShowSnippetPage(props: SnippetShowPageProps) {
 
     const deleteSnippet = actions.deleteSnippet.bind(null, snippet.id);
     return (
-        <div>
-            <div className="flex my-4 justify-between items-center">
+        <>
+            <div className="flex justify-between items-center">
                 <h1 className="text-xl font-bold">{snippet.title}</h1>
                 <div className="flex gap-2">
                     <Link
@@ -44,10 +44,10 @@ async function ShowSnippetPage(props: SnippetShowPageProps) {
                     </form>
                 </div>
             </div>
-            <pre className="p-4 border rounded bg-gray-200 border-gray-200">
+            <pre className="p-4 my-4 border rounded bg-gray-200 border-gray-200">
                 <code>{snippet.code}</code>
             </pre>
-        </div>
+        </>
     );
 }
 

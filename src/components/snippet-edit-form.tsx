@@ -16,7 +16,7 @@ function SnippetEditForm({ snippet }: SnippetEditFormProps) {
     const editSnippet = actions.editSnippet.bind(null, snippet.id, codeSnippet);
 
     return (
-        <div>
+        <>
             <Editor
                 height="40vh"
                 theme="vs-dark"
@@ -30,12 +30,12 @@ function SnippetEditForm({ snippet }: SnippetEditFormProps) {
             <form action={editSnippet}>
                 <button
                     type="submit"
-                    className="my-2 p-2 border rounded bg-blue-200"
+                    className="w-full my-2 p-2 border rounded bg-blue-200"
                 >
                     Save
                 </button>
             </form>
-        </div>
+        </>
     );
 }
 
