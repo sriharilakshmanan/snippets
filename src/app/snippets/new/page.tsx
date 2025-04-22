@@ -53,7 +53,10 @@ function CreateSnippetPage() {
                         {formState.message}
                     </div>
                 ) : null}
-                <button type="submit" className="rounded p-2 bg-blue-200">
+                <button
+                    type="submit"
+                    className="rounded p-2 bg-blue-200 hover:bg-blue-400"
+                >
                     Create
                 </button>
             </div>

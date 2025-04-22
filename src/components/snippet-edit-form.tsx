@@ -30,7 +30,7 @@ function SnippetEditForm({ snippet }: SnippetEditFormProps) {
             <form action={editSnippet}>
                 <button
                     type="submit"
-                    className="w-full my-2 p-2 border rounded bg-blue-200"
+                    className="w-full my-2 p-2 border rounded bg-blue-200 hover:bg-blue-400"
                 >
                     Save
                 </button>

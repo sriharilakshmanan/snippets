@@ -20,7 +20,10 @@ export default async function Home() {
         <>
             <div className="flex flex-col gap-2">{renderedSnippets}</div>
             <div className="flex justify-end items-center my-2">
-                <Link className="border p-2 rounded" href={`/snippets/new`}>
+                <Link
+                    className="border p-2 rounded hover:text-blue-600"
+                    href={`/snippets/new`}
+                >
                     New
                 </Link>
             </div>

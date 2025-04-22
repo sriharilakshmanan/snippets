@@ -19,10 +19,6 @@ async function SnippetEditPage(props: SnippetEditPageProps) {
         return notFound();
     }
 
-    return (
-        <div>
-            <SnippetEditForm snippet={snippet} />
-        </div>
-    );
+    return <SnippetEditForm snippet={snippet} />;
 }
 export default SnippetEditPage;

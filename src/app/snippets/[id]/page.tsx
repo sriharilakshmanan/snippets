@@ -10,7 +10,7 @@ interface SnippetShowPageProps {
 }
 
 async function ShowSnippetPage(props: SnippetShowPageProps) {
-    await new Promise((r) => setTimeout(r, 2000));
+    // await new Promise((r) => setTimeout(r, 2000));
     const { id } = await props.params;
     const snippet = await db.snippet.findFirst({
         where: {
@@ -30,14 +30,14 @@ async function ShowSnippetPage(props: SnippetShowPageProps) {
                 <div className="flex gap-2">
                     <Link
                         href={`/snippets/${snippet.id}/edit`}
-                        className="p-2 border rounded"
+                        className="p-2 border rounded hover:text-blue-600"
                     >
                         Edit
                     </Link>
                     <form action={deleteSnippet}>
                         <button
                             type="submit"
-                            className="p-2 border rounded bg-red-200"
+                            className="p-2 border rounded text-white bg-red-600 hover:bg-red-800"
                         >
                             Delete
                         </button>
