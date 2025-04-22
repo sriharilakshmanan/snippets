@@ -9,10 +9,9 @@ export default async function Home() {
             <Link
                 key={snippet.id}
                 href={`/snippets/${snippet.id}`}
-                className="flex items-center justify-between border p-2 rounded"
+                className="flex items-center justify-between border p-2 rounded hover:bg-gray-200"
             >
                 <div> {`${snippet.id}. ${snippet.title}`}</div>
-                <div>View</div>
             </Link>
         );
     });
